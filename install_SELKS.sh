@@ -252,17 +252,17 @@ chmod g+w /var/run/suricata/ -R
 
 ### START Moloch set up 
 
-mkdir -p /opt/molochtmp
-cd /opt/molochtmp/ && \
-apt-get update && apt-get install -y libjson-perl libyaml-dev libcrypto++6 libwww-perl
-wget https://files.molo.ch/builds/ubuntu-18.04/moloch_1.7.1-1_amd64.deb
-dpkg -i moloch_1.7.1-1_amd64.deb
+#mkdir -p /opt/molochtmp
+#cd /opt/molochtmp/ && \
+#apt-get update && apt-get install -y libjson-perl libyaml-dev libcrypto++6 libwww-perl
+#wget https://files.molo.ch/builds/ubuntu-18.04/moloch_1.7.1-1_amd64.deb
+#dpkg -i moloch_1.7.1-1_amd64.deb
 
-cd /opt/
-rm /opt/molochtmp -r
+#cd /opt/
+#rm /opt/molochtmp -r
 
 # make sure we hold the moloch pkg version unless explicit upgrade is wanted/needed
-apt-mark hold moloch
+#apt-mark hold moloch
 
 ### END Moloch set up
 
@@ -336,7 +336,6 @@ apt-get -y remove bison  autoconf automake libc6-dev autotools-dev libpcap-dev l
 apt-get autoremove -y
 apt-get clean && \
 cat /dev/null > ~/.bash_history && history -c
-
 
 echo "System needs to reboot to make changes, please reboot and execute selks-first-time-install?"
 
